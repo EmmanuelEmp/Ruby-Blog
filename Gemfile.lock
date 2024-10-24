@@ -261,6 +261,8 @@ GEM
       rubocop-minitest
       rubocop-performance
       rubocop-rails
+    rubocop-rspec (2.12.1)
+      rubocop (~> 1.31)
     ruby-progressbar (1.13.0)
     rubyzip (2.3.2)
     securerandom (0.3.1)
@@ -329,7 +331,11 @@ DEPENDENCIES
   puma (>= 5.0)
   rails (~> 7.2.1, >= 7.2.1.1)
   rspec-rails
+  rubocop
+  rubocop-performance
+  rubocop-rails
   rubocop-rails-omakase
+  rubocop-rspec
   shoulda-matchers
   sprockets-rails
   stimulus-rails

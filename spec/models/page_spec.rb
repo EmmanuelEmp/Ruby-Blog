@@ -11,10 +11,10 @@ RSpec.describe Page, type: :model do
   end
 
   describe '#slug' do
-   let (:page) { create(:page, title: '--Foo Bar! _ 87 --') }
+    let(:page) { create(:page, title: '--Foo Bar! _ 87 --') }
 
-   it 'is generated from title' do
-    expect(page.slug).to eq('foo-bar-87')
-   end
+    it 'is generated from title' do
+      expect(page.slug).to eq('foo-bar-87')
+    end
   end
 end

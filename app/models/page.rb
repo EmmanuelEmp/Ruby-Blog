@@ -17,11 +17,11 @@ class Page < ApplicationRecord
     return if title.blank?
 
     self.slug = title
-                    .downcase
-                    .gsub(/[_ ]/, "-")
-                    .gsub(/[^-a-z0-9+]/, "")
-                    .gsub(/-{2,}/, "-")
-                    .gsub(/^-/, "")
-                    .chomp("-")
+                .downcase
+                .gsub(/[_ ]/, '-')
+                .gsub(/[^-a-z0-9+]/, '')
+                .gsub(/-{2,}/, '-')
+                .gsub(/^-/, '')
+                .chomp('-')
   end
 end

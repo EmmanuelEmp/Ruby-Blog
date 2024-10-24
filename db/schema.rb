@@ -10,34 +10,34 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2024_10_24_045725) do
+ActiveRecord::Schema[7.2].define(version: 20_241_024_045_725) do
   # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
+  enable_extension 'plpgsql'
 
-  create_table "pages", force: :cascade do |t|
-    t.bigint "user_id", null: false
-    t.string "title"
-    t.string "slug"
-    t.text "summary"
-    t.text "content"
-    t.boolean "published", default: false, null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["created_at"], name: "index_pages_on_created_at"
-    t.index ["published"], name: "index_pages_on_published"
-    t.index ["slug"], name: "index_pages_on_slug"
-    t.index ["title"], name: "index_pages_on_title"
-    t.index ["user_id"], name: "index_pages_on_user_id"
+  create_table 'pages', force: :cascade do |t|
+    t.bigint 'user_id', null: false
+    t.string 'title'
+    t.string 'slug'
+    t.text 'summary'
+    t.text 'content'
+    t.boolean 'published', default: false, null: false
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
+    t.index ['created_at'], name: 'index_pages_on_created_at'
+    t.index ['published'], name: 'index_pages_on_published'
+    t.index ['slug'], name: 'index_pages_on_slug'
+    t.index ['title'], name: 'index_pages_on_title'
+    t.index ['user_id'], name: 'index_pages_on_user_id'
   end
 
-  create_table "users", force: :cascade do |t|
-    t.string "name"
-    t.string "email"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["email"], name: "index_users_on_email", unique: true
-    t.index ["name"], name: "index_users_on_name", unique: true
+  create_table 'users', force: :cascade do |t|
+    t.string 'name'
+    t.string 'email'
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
+    t.index ['email'], name: 'index_users_on_email', unique: true
+    t.index ['name'], name: 'index_users_on_name', unique: true
   end
 
-  add_foreign_key "pages", "users"
+  add_foreign_key 'pages', 'users'
 end
