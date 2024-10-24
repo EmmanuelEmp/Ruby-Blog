@@ -6,12 +6,13 @@ class CreatePages < ActiveRecord::Migration[7.2]
       t.string :slug
       t.text :summary
       t.text :content
-      t.boolean :published
+      t.boolean :published, null: false, default: false
 
       t.timestamps
     end
     add_index :pages, :title, unique: true
     add_index :pages, :slug, unique: true
     add_index :pages, :published
+    add_index :pages, :created_at
   end
 end
