@@ -62,5 +62,9 @@ gem "factory_bot_rails"
 
 group :test do
   gem "shoulda-matchers"
+
+  gem "capybara"
+
+  gem "webdrivers"
 end
 
