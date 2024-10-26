@@ -17,6 +17,7 @@ AllCops:
     - 'bin/**/*'
     - 'vendor/**/*'
     - 'app/views/**/**/*.haml'
+    - 'app/views/**/*.erb'
     - 'docs/**/*'
     - 'setup/*'
   TargetRubyVersion: 3.1
