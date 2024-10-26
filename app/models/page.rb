@@ -14,7 +14,7 @@ class Page < ApplicationRecord
 
   scope :ordered, -> { order(created_at: :desc) }
 
-  scope :by_term, ->(term) { where('content LIKE ?', "%#{term}%") } # TODO: Implement
+  # scope :by_term, ->(term) { where('content LIKE ?', "%#{term}%") } # TODO: Implement
 
   scope :by_term, ->(term) do
     term.gsub!(/[^-\w ]/, '')
