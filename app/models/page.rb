@@ -14,6 +14,20 @@ class Page < ApplicationRecord
 
   scope :ordered, -> { order(created_at: :desc) }
 
+  scope :by_term, ->(term) { where('content LIKE ?', "%#{term}%") } # TODO: Implement
+
+  scope :by_term, ->(term) do
+    term.gsub!(/[^-\w ]/, '')
+    terms = term.include?(' ') ? term.split : [term]
+    pages = Page
+
+    terms.each do |t|
+      pages = pages.where('content ILIKE ?', "%#{t}%")
+    end
+
+    pages
+  end
+
   private
 
   def make_slug
